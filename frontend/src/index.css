@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-DEFAULT: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-bg-light: #f3f4f6;
+  --color-bg-dark: #0f172a;
+  --color-cardbg-light: rgba(255, 255, 255, 0.8);
+  --color-cardbg-dark: rgba(30, 41, 59, 0.8);
+  
+  --font-sans: 'Inter', sans-serif;
+  --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-light);
+    color: #1e293b;
+    transition-property: color, background-color;
+    transition-duration: 300ms;
+  }
+  
+  .dark body {
+    background-color: var(--color-bg-dark);
+    color: #f1f5f9;
+  }
+}
+
+@layer components {
+  .glass-card {
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-soft);
+    border-radius: 1rem;
+  }
+  
+  .dark .glass-card {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
